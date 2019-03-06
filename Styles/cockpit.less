@@ -1,0 +1,84 @@
+﻿body{
+    overflow-y: auto;
+}
+
+.home-cockpit-container {
+    background-color: white;
+    width: 810px;
+    margin: auto;
+    box-shadow: 0 0 40px #333;
+    margin-bottom: 30px;
+    margin-top: 50px;
+    border-bottom: solid 10px #3775a9;
+
+    .link {
+        cursor: pointer;
+        padding: 20px 20px 5px 20px;
+        color: #08c;
+        text-align: right;
+
+        &:hover {
+            color: #005580;
+            text-decoration: underline;
+        }
+    }
+}
+
+.mini-cockpit {
+    background-color: white;
+    display:none;
+
+    .graph {
+        display: none;
+        float: left;
+        vertical-align: middle;
+        background-color: white;
+        text-align: center;
+
+        div {
+            height: 350px;
+        }
+
+        .check-img {
+            display: none;
+            float: left;
+            text-align: center;
+            line-height: 270px;
+            height: 300px;
+            width: 100%;
+
+            img {
+                width: 170px;
+                vertical-align: middle;
+            }
+        }
+    }
+
+    .info {
+        display: none;
+        height: 50px;
+        background-color: white;
+        color: rgb(39,75,109);
+        font-weight: bold;
+        padding: 0 20px;
+        line-height: normal;
+    }
+
+    .title {
+        background-color: #EFEFEF;
+        display: inline-block;
+        width: 100%;
+        margin-bottom: 10px;
+        text-align: center;
+        padding: 10px 0;
+        line-height: normal;
+    }
+}
+.cockpit-importStatus{
+    display:none;
+    text-align: center;
+    padding: 50px 0;
+    font-size: 20px;
+    font-weight: bold;
+    color: #08c;
+}

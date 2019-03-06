@@ -1,0 +1,163 @@
+﻿@import-once "../Content/bootstrap/less/bootstrap.less";
+@import-once "colibri_main.less";
+
+#aside_links {
+    list-style-type: none;
+    padding: 10px 0;
+    margin: 0;
+
+    .link-selected {
+        //.top-bottom-shadow();
+        border-color: #AAA;
+        background-color: white;
+    }
+    /*a {
+        line-height: 2em;
+        padding: 8px 0px 8px 15px;
+        margin: 2px 0;
+        border-radius: 10px 0 0 10px;
+        border: solid 1px @right_side_color;
+        border-right-width: 0;
+
+        &:hover {
+            border-color: #3775a8;
+            background-color: white;
+        }
+    }
+
+    a, span {
+        display: inline-block;
+        padding: 5px 15px;
+        text-decoration: none;
+        font-size: 14px;
+        line-height: 20px;
+        font-weight: bold;
+    }*/
+    .badge {
+        display: inline-block;
+        vertical-align: top;
+        padding: 0px;
+        width: 35px;
+        line-height: 35px;
+        font-size: 10px;
+        text-align: center;
+        border-radius: 20px;
+        background-color: #990000;
+        background-image: -webkit-linear-gradient(#E80000, #990000);
+        background-image: -moz-linear-gradient(#E80000, #990000);
+        background-image: -ms-linear-gradient(#E80000, #990000);
+        background-image: -o-linear-gradient(#E80000, #990000);
+        background-image: linear-gradient(#E80000, #990000);
+        .box-shadow(1px 1px 12px #555);
+    }
+}
+
+#aside_pannel {
+    .aside-menu-panel {
+        width: -webkit-calc(~"100% + 20px");
+        width: -moz-calc(~"100% + 20px");
+        width: calc(~"100% + 20px");
+
+        margin-left:-20px;
+        a, span {
+            display: block;
+            line-height: 35px;
+            padding: 5px 0 5px 10px;
+            margin-bottom:5px;
+            font-size: 14px;
+            font-weight: bold;
+            border: solid 1px rgba(0,0,0,0);
+            border-left: solid 12px rgba(0,0,0,0);
+            border-right:none;
+            margin-right:-1px;
+        }
+
+        a:hover{
+            /*background-color: white;
+            border-color:#3775a9;*/
+        }
+
+        span {
+            background-color: white;
+            color: #005580;
+            border: solid 1px #3775a9;
+            border-left: solid 12px #3775a9;
+            border-right:none;
+        }
+    }
+}
+
+
+.top-bottom-shadow {
+    -webkit-box-shadow: -10px -5px 15px #c9c5c5,-10px 5px 15px #dbdbdb;
+    -moz-box-shadow: -10px -5px 15px #c9c5c5,-10px 5px 15px #dbdbdb;
+    box-shadow: -10px -5px 15px #c9c5c5,-10px 5px 15px #dbdbdb;
+}
+
+
+#right_side {
+    -moz-transition-property: left;
+    -moz-transition-duration: 1s;
+    -ms-transition-property: left;
+    -ms-transition-duration: 1s;
+    -o-transition-property: left;
+    -o-transition-duration: 1s;
+    -webkit-transition-property: left;
+    -webkit-transition-duration: 1s;
+    transition-property: left;
+    transition-duration: 1s;
+    z-index: 0;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    padding: 20px 0 20px 10px;
+    height: 100%;
+    
+}
+
+    #right_side.collapsed {
+        left: -23.404255319%;
+    }
+
+#workarea {
+    -moz-transition-property: margin-left, width;
+    -moz-transition-duration: 1s;
+    -ms-transition-property: margin-left, width;
+    -ms-transition-duration: 1s;
+    -o-transition-property: margin-left, width;
+    -o-transition-duration: 1s;
+    -webkit-transition-property: margin-left, width;
+    -webkit-transition-duration: 1s;
+    transition-property: margin-left, width;
+    transition-duration: 1s;
+    /*overflow:visible;*/
+}
+
+    #workarea.collapsed {
+        margin-left: 10px;
+    }
+
+.side_menu_button {
+    position: absolute;
+    left: 101%;
+    height: -webkit-calc(~"100% - 40px");
+    height: -moz-calc(~"100% - 40px");
+    height: calc(~"100% - 40px");
+
+    #menuButton {
+        cursor: pointer;
+        position: relative;
+        height: 100%;
+        width: 15px;
+        max-width: none;
+    }
+
+    #menuButton2 {
+        cursor: pointer;
+        position: relative;
+        height: 100%;
+        width: 15px;
+        max-width: none;
+    }
+}

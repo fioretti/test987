@@ -1,0 +1,44 @@
+.workflow {
+	position: relative;
+	text-align: center;
+	height: 116px;
+	
+	z-index: 0;
+	
+	ul {
+		display: inline-block;
+		
+		margin: 0;
+		padding: 0;
+		
+		/* Base style for items */
+		.item_base(@file,@color) {
+			background: transparent url(@file) no-repeat center center;
+			display: table-cell;
+			width: 170px;
+			height: 116px;
+			text-align: center;
+			vertical-align: middle;
+			color: @color;
+			
+			position: relative; z-index: 10; /* make sure the cursor is above the main content's shadow */
+			
+			a {
+				color: @color;
+			}
+		}
+		.item_current {
+			.item_base('../Images/svg/item_current.svg', white);
+		}
+		.item_available {
+			.item_base('../Images/svg/item_available.svg', white);
+		}
+		.item_unavailable {
+			.item_base('../Images/svg/item_unavailable.svg', #005580);
+		}
+	}
+}
+
+
+
+

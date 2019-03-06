@@ -1,0 +1,271 @@
+﻿@import-once "../Content/bootstrap/less/bootstrap.less";
+
+#chart_frame {
+    position: relative;
+    min-height: 400px;
+    //min-width: 600px;
+    margin-right:30px;
+}
+
+#error_notif,  #scope_zero_value, #empty_notif, #success_notif,  #invalid_scope_status, #scope_negative_value, #error_configuration, #import-nodate, #error_noname, #error_nopages, #error_confandatt, #error_baddates {
+    display: none;
+    width: 100%;
+    .box-sizing(border-box);
+}
+#error_calcul, #success_calcul{
+    display: none;
+    margin-right: 25px;
+    .box-sizing(border-box);
+}
+#data_container, #data_container_fo, #data_container_sd {
+    position: relative;
+    min-height: 400px;
+    min-width: 600px;
+
+    #loading_layer {
+        display: none;
+        position: absolute;
+        top: 0;
+        left: 0;
+        text-align: center;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(255,255,255,0.8);
+
+        img {
+            margin-top: 150px;
+        }
+    }
+
+    #error_notif, #empty_notif, #success_notif, #invalid_scope_status, #scope_negative_value {
+        display: none;
+        width: 100%;
+        .box-sizing(border-box);
+    }
+
+    #unauthorized_panel {
+        display: none;
+        margin: 0;
+        width: 90%;
+        max-width: 100%;
+    }
+
+    #multiple_selection_frame {
+        display: none;
+        padding: 10px 5px;
+        width: 100%;
+        .box-sizing(border-box);
+    }
+    // Display loading layer when adding the "loading" class
+    &.loading {
+
+        #loading_layer {
+            display: block;
+        }
+    }
+    // Display the error notif when adding the "error" class
+    &.error, &.multiselection.error {
+
+        #chart_frame, #datatable_frame, #action_buttons, #multiple_selection_frame {
+            display: none;
+        }
+
+        #error_notif {
+            display: block;
+        }
+    }
+    // Display the empty notif when adding the "error" class
+    &.empty {
+
+        #chart_frame, #datatable_frame, #action_buttons, #multiple_selection_frame {
+            display: none;
+        }
+
+        #empty_notif {
+            display: block;
+        }
+    }
+
+    &.unauthorized {
+        #chart_container, #chart_frame, #datatable_frame, #action_buttons {
+            display: none;
+        }
+
+        #unauthorized_panel {
+            display: block;
+        }
+    }
+
+    #big_multiple_selection {
+        display: none;
+    }
+
+    &.bigmultiselection {
+        #chart_frame, #datatable_frame {
+            display: none;
+        }
+
+        #big_multiple_selection {
+            display: block;
+        }
+    }
+
+    &.multiselection {
+        #multiple_selection_frame {
+            display: block;
+        }
+    }
+
+    &.success {
+
+        #form_config {
+            display: none;
+        }
+
+        #success_notif {
+            display: block;
+        }
+    }
+
+    .launchAll{
+        display: block;        
+        font-weight: normal;    
+    }
+}
+
+#datatable_frame {
+    position: relative;
+    //  min-width: 600px;
+    //  max-width: 800px;
+    overflow-x: auto;
+
+    table {
+        border-collapse: collapse;
+        border: 1px solid lightgrey;
+        padding: 2px;
+        font-size: 12px;
+        color: black;
+    }
+
+    .editable {
+        background-color: rgb(245,245,245);
+    }
+
+    tr {
+        min-height: 38px;
+        border-bottom-color: #ededed;
+
+        .row_title {
+            border: none;
+            //border-right:1px solid lightgrey;
+        }
+
+        &.activated > td.editable_cell {
+            background-color: lightblue;
+        }
+
+        &.deactivated > td.editable_cell {
+            background-color: white;
+        }
+
+        td {
+            padding-left: 2px;
+            padding-right: 2px;
+            margin: 1px 4px;
+            min-width: 40px;
+        }
+    }
+
+    #editable_quantity_data {
+        td.editable_cell:hover {
+            background-color: #0094ff;
+            cursor: pointer;
+        }
+    }
+
+    .editable-click.editable-disabled {
+        color: black;
+        border-bottom: none;
+    }
+
+    .editable-input {
+        color: gray;
+        font-style: italic;
+        width: 40px;
+
+        .input-medium {
+            width: 20px;
+        }
+    }
+}
+
+#action_buttons {
+    margin-bottom: 10px;
+}
+
+.square {
+  width:100%;
+}
+
+.square:after {
+  display: block;
+  padding-bottom: 100%;
+}
+.unit-chooser {
+    display: inline-block;
+    /*float: right;*/
+    margin-top: -40px;
+    
+}
+
+#collaboration {
+    padding-right: 5px;
+
+    textarea {
+        width: 100%;
+        .box-sizing(border-box);
+    }
+
+    .alert {
+        display: none;
+    }
+
+    &.loading button {
+        display: none;
+    }
+
+    &.success .alert-success {
+        display: block;
+    }
+
+    &.error .alert-error {
+        display: block;
+    }
+}
+
+#action_buttons {
+
+    .sep {
+        display: inline-block;
+        vertical-align: middle;
+        margin: 0 3px 0 3px;
+        width: 2px;
+        height: 25px;
+        background-color: @title-color;
+    }
+}
+.sep {
+        display: inline-block;
+        vertical-align: middle;
+        width: 2px;
+        height: 25px;
+        background-color: @title-color;
+    }
+.sep-report {
+        display: inline-block;
+        vertical-align: middle;
+        width: 2px;
+        height: 25px;
+        background-color: @title-color;
+    }
+

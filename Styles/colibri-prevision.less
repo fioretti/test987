@@ -1,0 +1,274 @@
+﻿@import-once "../Content/bootstrap/less/bootstrap.less";
+
+/* Styles for the prevision page */
+
+#forecast_form {
+    margin: 20px;
+
+    .loader {
+        display: none;
+        margin-left: 30px;
+    }
+
+    &.loading {
+
+        .loader {
+            display: inline;
+        }
+
+        input[type='submit'] {
+            display: none;
+        }
+    }
+}
+
+/* form sandbox simulation */
+#sandbox_forecast_form {
+   // margin: 20px;
+
+    .loader {
+        display: none;
+        margin-left: 30px;
+    }
+
+    #saving_loader{
+        display:none;
+    }
+
+    input[type="radio"]{
+        margin-top:0;
+        margin-right: 15px;
+    }
+
+    &.loading {
+
+        .loader {
+            display: inline;
+        }
+
+        input[type='submit'] {
+            display: none;
+        }
+    }
+
+    #BestFitResult{
+        display:none;
+        float:right;
+        padding: 10px;
+        background-color: #c8dced;
+       // width: 26%;
+        color:#3775a9;
+        font-size:18px;
+        line-height: 20px;
+       .border-radius(10px);
+    }
+}
+
+/* The blue box */
+#forecast_form_box {
+    background-color: #c8dced;
+    padding: 10px;
+    line-height: 20px;
+    width:75%;
+    .border-radius(10px);
+
+    .k-dropdown {
+        width: 250px;
+    }
+
+    .user-data {
+        display: block;
+    }
+
+    input[type='submit'] {
+        margin: 0 20px;
+        float: right;
+    }
+
+    .k-numerictextbox {
+        padding: 0;
+    }
+
+        .k-numerictextbox.input-70 {
+            width: 70px;
+        }
+
+        .k-datepicker.input-100, .k-numerictextbox.input-100 {
+            width: 100px;
+        }
+}
+
+
+#data_container {
+
+    #form_config{
+        margin-right: 10px;
+        .box-sizing(border-box);
+    }
+
+    /* The configuration form */
+    &.loading {
+
+        #form_config, #multiple_selection_frame {
+            display: none;
+        }
+    }
+    &.error {
+         #form_config {
+             display: none;
+         }
+    }
+    #no_config {
+        display: none;
+    }
+
+    &.no_config form {
+        display: none;
+    }
+
+    &.no_config #no_config {
+        display: inline;
+    }
+}
+
+#data_container_fo {
+    margin-top: 0;
+    margin-right: 20px;
+
+    #form_config{
+        margin-right: 10px;
+        .box-sizing(border-box);
+    }
+
+    /* The configuration form */
+    &.loading {
+
+        #form_config, #multiple_selection_frame {
+            display: none;
+        }
+    }
+    &.error {
+         #form_config {
+             display: none;
+         }
+    }
+    #no_config {
+        display: none;
+    }
+
+    &.no_config form {
+        display: none;
+    }
+
+    &.no_config #no_config {
+        display: inline;
+    }
+}
+
+#data_container_sd {
+    margin-top: 0;
+
+    #form_config{
+        margin-right: 10px;
+        .box-sizing(border-box);
+    }
+
+    /* The configuration form */
+    &.loading {
+
+        #form_config, #multiple_selection_frame {
+            display: none;
+        }
+    }
+    &.error {
+         #form_config {
+             display: none;
+         }
+    }
+    #no_config {
+        display: none;
+    }
+
+    &.no_config form {
+        display: none;
+    }
+
+    &.no_config #no_config {
+        display: inline;
+    }
+}
+
+.working-area-modal {
+    margin-right : 30px;
+}
+
+.forecast-table {
+    font-size: 10px;
+    font-family: Verdana, Geneva, 'DejaVu Sans', sans-serif;
+    font-weight: lighter;
+
+    thead {
+        background-color: #3775a9;
+        color: white;
+        font-weight: lighter;
+    }
+}
+
+.data_container_header {
+    min-height: 20px;/*200px*/
+}
+
+.forecast_info_section {
+    background-color: lavender;
+    padding: 15px;
+    border-radius: 3px;
+    font-size: 13px;
+    line-height: normal;
+
+    .forecast_info_section_text {
+    }
+
+    .forecast_info_section_icon {
+        float: left;
+        margin-right: 8px
+    }
+}
+
+#forecast_footer {
+    background-color: white;
+    box-shadow: 0 -30px 30px -30px #CCCCCC;
+    display: block;
+    position: absolute;
+    bottom: 0px;
+    width: 100%;
+    margin: 0;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    left: 0;
+    text-align: center;
+
+    #forecast_footer_special_actions {
+        position: absolute;
+        right: 10px;
+        bottom: 10px;
+        text-align: right;
+
+        a {
+            cursor: pointer;
+        }
+    }
+}
+
+.simple-text-button {
+    color: rgb(218, 79, 73);
+    background: none;
+    border: none;
+    text-shadow: none;
+    font-size: 24px;
+    box-shadow: none;
+}
+
+.clickable {
+    cursor: pointer;
+}
+

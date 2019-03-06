@@ -1,0 +1,58 @@
+﻿@title-color: #3775a9;
+
+.add-accreditation-form {
+    #useLowerBoundLabel, #useUpperBoundLabel {
+        color: @title-color;
+        margin-left: 5px;
+        cursor: pointer;
+        vertical-align: middle;
+
+        &:hover {
+            text-decoration: underline;
+        }
+
+        &:active {
+            color: #005580;
+        }
+    }
+
+    hr {
+        border-width: 2px;
+    }
+
+    #useLowerBoundBlock, #useUpperBoundBlock {
+        display: none;
+    }
+}
+
+#NameInfo-edit, #NameInfo-save {
+    display: none;
+}
+
+div.axis-legend {
+    font-weight: bold;
+    font-size: 14px;
+    float:left;
+    padding-right:10px;
+}
+
+
+hr.axis-legend {
+    
+    border: 0;
+    height: 2px;
+    background: #333;
+    background-image: -webkit-linear-gradient(left, #ccc, #333, #ccc); 
+    background-image: -moz-linear-gradient(left, #ccc, #333, #ccc); 
+    background-image: -ms-linear-gradient(left, #ccc, #333, #ccc); 
+    background-image: -o-linear-gradient(left, #ccc, #333, #ccc); 
+   
+}
+
+.slider-and-label {
+    display: none;
+}
+
+#promotionListScopesGrid .k-grid-content{
+    max-height: 350px;
+}

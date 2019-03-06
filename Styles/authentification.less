@@ -1,0 +1,93 @@
+﻿
+.LogOnBack{
+    width:100%;
+    height:100%;
+     background-image: url("../../Images/svg/colibri_filigrane.svg");
+     background-position:top;
+     background-repeat:no-repeat;
+     background-size:550px;
+     padding-top:180px ;
+}
+#loginForm{    
+    margin: auto;    
+    width:480px;    
+    text-align:center;
+    padding:20px 20px 0 20px;
+    border-radius:3px;
+    border:solid 1px #666;
+    box-shadow: 0 0 15px #666;
+    background-image: url("../../Images/background_auth_ie9.png"); /*background for ie9*/
+    background-size: contain;
+    background-image: -webkit-linear-gradient(rgba(255,255,255,0.8),rgba(55, 117, 169,0.6), rgba(255,255,255,0.8));
+    background-image: -moz-linear-gradient(rgba(255,255,255,0.8),rgba(55, 117, 169,0.6), rgba(255,255,255,0.8));
+    background-image: linear-gradient(rgba(255,255,255,0.8),rgba(55, 117, 169,0.6), rgba(255,255,255,0.8));
+    font: "Segoe UI";
+    .input-name{
+        display:inline-block;
+        color:rgb(231,231,231);
+        font-weight:600;
+        width:120px;
+    }
+    .input-name-reset{
+        display:inline-block;
+        color:rgb(231,231,231);
+        font-weight:600;
+        width:210px;
+    }
+    #usernameInput, #passwordInput{
+        padding:5px;
+        width:250px;        
+    }
+    #usernameInput:-webkit-autofill {        
+        box-shadow:0 0 0 50px rgba(55, 117, 169,0.9) inset;
+        -webkit-text-fill-color: #FAFAFA;
+    }
+    #passwordInput:-webkit-autofill {        
+        box-shadow:0 0 0 50px rgba(55, 117, 169,0.9) inset;
+        -webkit-text-fill-color: #FAFAFA;
+    }
+    .loginSubmit{
+        text-align:right;
+        margin-right:38px;
+    }
+    .loginForm-title{
+        text-align:center;
+        font-size:21px;
+        height:80px;
+    }
+    .validation-summary-errors{
+        border: solid 1px rgba(170,0,0,0.3);
+        background-color:rgba(170,0,0,0.1);
+        color:rgb(170,0,0);
+        font-weight:normal;
+        padding:10px;
+    }
+}   
+
+#badNavigator{
+    display: none;
+    margin: auto;    
+    width:480px;    
+    text-align:center;
+    padding:20px 20px 20px 20px;
+    border-radius:3px;
+    border:solid 1px #666;
+    box-shadow: 0 0 15px #666;
+    color: white;
+    font-size:16px;
+    background-image: linear-gradient(rgba(170,0,0,0.7), rgba(210,0,0,0.5));
+    background-image: -webkit-linear-gradient(rgba(170,0,0,0.7), rgba(210,0,0,0.5));
+    background-image: -moz-linear-gradient(rgba(170,0,0,0.7), rgba(210,0,0,0.5));    
+}
+.navigatorInfo{
+    font-weight: bold;
+    border-bottom: solid 5px rgba(170,0,0,0.7);
+}
+
+.accept-browsers{
+    margin-top: 20px;    
+    span{
+        float:left;
+        width:33%;
+    }
+}

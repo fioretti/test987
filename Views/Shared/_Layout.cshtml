@@ -1,0 +1,186 @@
+﻿@*@using Colibri.Web.Resources
+@{
+    var culture = System.Globalization.CultureInfo.CurrentCulture.ToString();
+    var menuCollapsedCookie = Request.Cookies["menu_collapsed"];
+    var menuCollapsedCookie2 = Request.Cookies["menu_collapsed2"];
+    var menuCollapsed = menuCollapsedCookie != null && menuCollapsedCookie.Value == "true";
+    var menuCollapsed2 = menuCollapsedCookie2 != null && menuCollapsedCookie2.Value == "true";
+    var haveMenuClass = "no-menu";
+    var isDataManagement = ViewBag.FromPage == "ListNewProduct" || ViewBag.FromPage == "createNewProduct" || ViewBag.FromPage == "TagProducts" || ViewBag.FromPage == "ImportMimetisme" || ViewBag.FromPage == "HistoriqueImportMimetisme" ? true : false;
+}*@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="shortcut icon" href="~/favicon.ico" type="image/x-icon">
+    <link rel="icon" href="~/favicon.ico" type="image/x-icon">
+    <meta charset="utf-8" />
+    <title>@ViewBag.Title - Colibri</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="~/Styles/bootstrap-editable.css" />
+    <link rel="stylesheet" href="~/Content/handsontable/jquery.handsontable.full.css" />
+    <link rel="stylesheet" href="~/Styles/colibri.less" />
+
+    @*    TODO : add them to the colibri.less when have the not .min file *@
+    <link href="@Url.Content("~/Content/kendo/2014.3.1119/kendo.common.min.css")" rel="stylesheet" type="text/css" />
+    <link href="@Url.Content("~/Content/kendo/2014.3.1119/kendo.mobile.all.min.css")" rel="stylesheet" type="text/css" />
+    <link href="@Url.Content("~/Content/kendo/2014.3.1119/kendo.dataviz.min.css")" rel="stylesheet" type="text/css" />
+    <link href="@Url.Content("~/Content/kendo/2014.3.1119/kendo.uniform.min.css")" rel="stylesheet" type="text/css" />
+    <link href="@Url.Content("~/Content/kendo/2014.3.1119/kendo.dataviz.default.min.css")" rel="stylesheet" type="text/css" />
+    <link href="@Url.Content("~/Styles/colibri-kendo.less")" rel="stylesheet" type="text/css" />
+    <link href="@Url.Content("~/Styles/d3.parcoords.css")" rel="stylesheet" type="text/css" />
+
+    <link href="@Url.Content("~/bundles/jquery")" rel="stylesheet" type="text/css" />
+    <link href="@Url.Content("~/bundles/layout")" rel="stylesheet" type="text/css" />
+
+    <script src="@Url.Content("~/Scripts/kendo/2014.3.1119/kendo.all.min.js")"></script>
+    <script src="@Url.Content("~/Scripts/kendo/2014.3.1119/jszip.min.js")"></script>
+    <script src="@Url.Content("~/Scripts/kendo/2014.3.1119/kendo.aspnetmvc.min.js")"></script>
+    @*@if (culture == "fr-FR" || culture == "en-GB" || culture == "en-US" || culture == "es-ES")
+        {
+            <script src="@Url.Content("~/Scripts/kendo/2014.3.1119/cultures/kendo.culture."+@culture+".min.js")"></script>
+        }
+        else
+        {*@
+    <script src="@Url.Content("~/Scripts/kendo/2014.3.1119/cultures/kendo.culture.en-US.min.js")"></script>
+    @*  }*@
+
+
+    <link href="@Url.Content("~/Scripts/draggable_kendo_chart.js")" rel="stylesheet" type="text/css" />
+    <link href="@Url.Content("~/bundles/htm2canvas/js")" rel="stylesheet" type="text/css" />
+    <link href="@Url.Content("~/bundles/i18n")" rel="stylesheet" type="text/css" />
+    <link href="@Url.Content("~/bundles/moment")" rel="stylesheet" type="text/css" />
+
+    <meta name="description" content="Colibri" />
+</head>
+<body>
+    <header id="page_header">
+        <nav>
+            <a href="/Movies/Edit/4"> Home </a> |
+
+            <div class="login-view-min600 hidden-phone">
+                NotLoggedMessage
+            </div>
+
+            <a id="home_icon" class="pull-left" href="@Url.Action("Index", "Home")"></a>
+            @* messages *@
+            <div class="dropdown pull-left" id="notifications">
+                <a class="dropdown-toggle" data-toggle="dropdown" href="#"><span id="badge-notifications" class="badge badge-important"></span></a>
+                <ul id="notificationsList" class="dropdown-menu" role="menu" aria-labelledby="dropdownMenu">
+                    <li class="no_message"><i>No messages</i></li>
+                </ul>
+            </div>
+            <div class="dropdown pull-left" id="system-notifications">
+                <a class="dropdown-toggle" data-toggle="dropdown" href="#"><span id="badge-system-notifications" class="badge badge-important"></span></a>
+                <ul id="system-notifications-list" class="dropdown-menu" role="menu" aria-labelledby="dropdownMenu">
+                    <template id="no-notification-message-template">
+                        <li class="no_message"><i>No messages</i></li>
+                    </template>
+                </ul>
+                <template id="system-notification-template">
+                    <li class="notif_entry" data-messageid="">
+                        <span class="notif_author"></span>
+                        <p></p>
+                        <div class="center">
+                            <a href="#" data-messageid="" data-targeturi="" class="btn target"><img src="../Images/target_btn.png" /></a>
+                            <input data-messageid="" class="btn delete" type="image" src="../Images/svg/user_cancel.svg" />
+                        </div>
+                    </li>
+                </template>
+            </div>
+        </nav>
+    </header>
+
+    <a href="/Account/Register">Register</a>
+    <a href="/Account/Register">Register</a>
+
+    <div id="content">
+        @*@if (IsSectionDefined("AsidePerimeters"))
+            {
+
+                <aside id="right_side" class="aside_perimeters span3  @((isDataManagement && menuCollapsed2) ? "collapsed" : !isDataManagement && menuCollapsed ? "collapsed" : "")">
+                    <a class="side_menu_button">
+                        <img id="@(isDataManagement ? "menuButton2" : "menuButton")" src="~/Images/svg/@((isDataManagement && menuCollapsed2) ? "menu_show.svg" : !isDataManagement && menuCollapsed ? "menu_show.svg" : "menu_reduce.svg")" />
+                    </a>
+                    <div id="aside_pannel">
+                        @RenderSection("AsidePerimeters")
+                    </div>
+                </aside>
+                <div id="workarea" style="@(ViewBag.FromPage == "Simulation" ? "padding: 0px 0 5px 0px;" : "")" class="@((isDataManagement && menuCollapsed2) ? "collapsed span12" : !isDataManagement && menuCollapsed ? "collapsed span12" : "span9 custom-offset3") @(ViewBag.FromPage == "Simulation" ? "simulation-area" : "")">
+                    <div class="span12 right-element">
+                        <section class="content-wrapper main-content clear-fix">
+                            @RenderBody()
+                        </section>
+                    </div>
+                </div>
+            }
+            else if (IsSectionDefined("AsideMenu"))
+            {
+                <aside id="right_side" class="aside_menu span3 @((isDataManagement && menuCollapsed2) ? "collapsed" : !isDataManagement && menuCollapsed ? "collapsed" : "")">
+                    <a class="side_menu_button">
+                        <img id="@(isDataManagement ? "menuButton2" : "menuButton")" src="~/Images/svg/@((isDataManagement && menuCollapsed2) ? "menu_show.svg" : !isDataManagement && menuCollapsed ? "menu_show.svg" : "menu_reduce.svg")" />
+                    </a>
+                    <div id="aside_pannel">
+                        @RenderSection("AsideMenu")
+                    </div>
+                </aside>
+                <div id="workarea" class="@((isDataManagement && menuCollapsed2) ? "collapsed span12" : !isDataManagement && menuCollapsed ? "collapsed span12" : "span9 custom-offset3")">
+                    <div class="span12 right-element">
+                        <section class="content-wrapper main-content clear-fix">
+                            @RenderBody()
+                        </section>
+                    </div>
+                </div>
+            }
+            else if (IsSectionDefined("NoAside"))
+            {
+                @RenderSection("NoAside")
+                <div id="workarea" class="span12">
+                    <div class="span12 right-element">
+                        <section class="content-wrapper main-content clear-fix">
+                            @RenderBody()
+                        </section>
+                    </div>
+                </div>
+            }
+            else if (IsSectionDefined("AsideProductsList"))
+            {
+                <div id="workarea" class="custom-offset3 @((isDataManagement && menuCollapsed2) ? "collapsed span12" : !isDataManagement && menuCollapsed ? "collapsed span12" : "span9")">
+                    <div class="span3 match-parent_height">
+                        <aside class="match-parent_height">
+                            @RenderSection("AsideProductsList")
+                        </aside>
+                    </div>
+                    @RenderSection("featured", required: false)
+                    <div class="span9 right-element">
+                        <section class="content-wrapper main-content clear-fix">
+                            @RenderBody()
+                        </section>
+                    </div>
+                </div>
+            }
+            else if (IsSectionDefined("Aside"))
+            {
+                <div id="workarea" class="custom-offset3 @((isDataManagement && menuCollapsed2) ? "collapsed span12" : !isDataManagement && menuCollapsed ? "collapsed span12" : "span9"))">
+                    @RenderSection("featured", required: false)
+                    <section class="content-wrapper main-content clear-fix right-element">
+                        @RenderBody()
+                    </section>
+                </div>
+            }
+            else
+            {*@
+        <div id="workarea" class="span12">        
+            @RenderSection("featured", required: false)
+            <section class="content-wrapper main-content clear-fix right-element">
+                    @RenderBody()
+                </section>
+        </div>
+        @*}*@
+    </div>
+    @RenderSection("scripts", required: false)
+</body>
+</html>
+<script>
+    @*kendo.culture("@culture");*@
+</script>

@@ -1,0 +1,185 @@
+﻿@import-once "colibri_main.less";
+.without-left-margin {
+    margin-left: 0px;
+}
+#aggregation_settings {
+    position: absolute;
+    bottom: 0;
+    background-color: @aside_bottom_color;
+    padding: 5px 10px 20px 10px;
+    margin: 0;
+    width: 100%;
+    .box-sizing(border-box);
+
+    .k-slider{
+        width : 100%;
+    }
+
+    ul {
+        list-style-type: none;
+        margin: 0;
+
+        li{
+            
+        }
+    }
+
+    .slider-container {
+        margin: 7px 20px 5px;
+
+        .k-slider-track {
+            background-image: -webkit-linear-gradient(#CCC, #DDD 40%);
+            background-image: -moz-linear-gradient(#CCC, #DDD 40%);
+            background-image: linear-gradient(#CCC, #DDD 40%);
+            border: solid 1px #CCC;
+        }
+
+        .k-slider-selection {
+            background-image: -webkit-linear-gradient(#CCC, #DDD 40%);
+            background-image: -moz-linear-gradient(#CCC, #DDD 40%);
+            background-image: linear-gradient(#CCC, #DDD 40%);
+        }
+
+        .k-state-selected {
+            border: none;
+            width: 15px;
+            height: 15px;
+        }
+
+        .k-draghandle {
+            background-image: -webkit-linear-gradient(bottom, #1e5799 0%, #7db9e8 100%);
+            background-image: -moz-linear-gradient(bottom, #1e5799 0%, #7db9e8 100%);
+            background-image: none,linear-gradient(to top, #1e5799 0%,#7db9e8 100%);
+            border: none;
+            width: 15px;
+            height: 15px;
+        }
+
+            .k-draghandle:focus {
+                outline: none;
+            }
+    }
+
+    .slider {
+        width: 100% !important;
+    }
+
+    #axis_sliders {
+        display: none;
+    }
+
+    #axis_sliders_loading_layer {
+        text-align: center;
+        min-height: 200px;
+    }
+
+    #axis_sliders_loading_img {
+        margin-top: 60px;
+    }
+
+    #axis_sliders_loading_label {
+        margin-top: 15px;
+    }
+}
+
+.k-animation-container {
+    margin-top: -8px;
+}
+
+#useLowerBoundBlock {
+
+    ul {
+        list-style-type: none;
+        margin: 0;
+
+        .slider-title{
+            display:inline-block;
+            line-height:43px;
+            width:140px;
+            text-align:right;
+            margin-right:25px;
+            margin-bottom:0;
+        }
+
+    }
+
+    .k-slider{
+        width : 300px;
+    }
+
+    .slider-container {
+        margin: 7px 20px 5px;
+
+        .k-slider-track {
+            background-image: -webkit-linear-gradient(#08c,#08c 40%);
+            background-image: -moz-linear-gradient(#08c,#08c 40%);
+            background-image: linear-gradient(#08c,#08c 40%);   
+            border: solid 1px #CCC;
+        }
+
+        .k-slider-selection {
+            background-image: -webkit-linear-gradient(#666, #888 40%);
+            background-image: -moz-linear-gradient(#666, #888 40%);
+            background-image: linear-gradient(#666, #888 40%);
+        }
+
+        .k-state-selected {
+            border: none;
+            width: 15px;
+            height: 15px;
+        }
+
+        .k-draghandle {
+            background-image: -webkit-linear-gradient(bottom, #1e5799 0%, #7db9e8 100%);
+            background-image: -moz-linear-gradient(bottom, #1e5799 0%, #7db9e8 100%);
+            background-image: none,linear-gradient(to top, #1e5799 0%,#7db9e8 100%);
+            border: none;
+            width: 15px;
+            height: 15px;
+        }
+
+            .k-draghandle:focus {
+                outline: none;
+            }
+    }
+
+    .slider {
+    }
+
+    #axis_sliders_loading_layer {
+        text-align: center;
+        min-height: 200px;
+    }
+
+    #axis_sliders_loading_img {
+        margin-top: 60px;
+    }
+
+    #axis_sliders_loading_label {
+        margin-top: 15px;
+    }
+}
+
+#local-slider-aggregation{
+    display: none;    
+    z-index:1;
+    background-color: #f1f2f3;   
+    left:0px;    
+    margin-top: 20px;
+
+    .slider-and-label{
+        margin-left: 20px;
+    }
+
+    .row-fixed-left{
+        display:block;
+        height: 25px;        
+    }
+
+    .row-fixed-right{
+        width: 95%;
+    }
+    .slider.slider-horizontal{
+        width: 100% !important;
+    }
+}
